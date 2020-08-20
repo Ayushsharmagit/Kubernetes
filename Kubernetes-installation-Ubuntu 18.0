@@ -1,23 +1,20 @@
-# run all the commands in root user
-sudo su
-
 # update operating system
-apt-get update
+sudo apt-get update
 
 # Docker dependencies
-apt-get install docker.io -y
-systemctl start docker
-systemctl enable docker
+sudo apt-get install -y docker.io
+sudo systemctl start docker
+sudo systemctl enable docker
 
 # ‘curl’ command is used to send request URL
-apt-get install curl -y
+sudo apt-get install curl -y
 
 # download an add-key for Kubernetes from URL
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
+sudo curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
 
 # add important dependencies for kubernetes
-chmod 777 /etc/apt/sources.list.d/
-cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
+sudo chmod 777 /etc/apt/sources.list.d/
+sudo cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
 deb https://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 
@@ -27,13 +24,13 @@ sudo apt-get update
 # Installing kubeadm, kubelet and kubectl 
 sudo apt-get install -y kubelet kubeadm kubectl kubernetes-cni
 
-swapoff -a
+sudo swapoff -a
 
 # initiallizing control plane
-kubeadm init
+sudo kubeadm init
         or
 # if the number of available CPUs is less than the required 2        
-kubeadm init --ignore-preflight-errors=NumCPU
+sudo kubeadm init --ignore-preflight-errors=NumCPU
 
 kubeadm init --apiserver-advertise-address=<your machine/instance ip-address> --pod-network-cidr=192.168.0.0/16
 
