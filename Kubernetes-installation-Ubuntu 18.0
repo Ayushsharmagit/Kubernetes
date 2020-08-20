@@ -7,7 +7,7 @@ sudo systemctl start docker
 sudo systemctl enable docker
 
 # ‘curl’ command is used to send request URL
-sudo apt-get install curl -y
+sudo apt-get install -y curl
 
 # download an add-key for Kubernetes from URL
 sudo curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
