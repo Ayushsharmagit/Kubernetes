@@ -36,3 +36,5 @@ kubeadm init
 kubeadm init --ignore-preflight-errors=NumCPU
 
 kubeadm init --apiserver-advertise-address=<your machine/instance ip-address> --pod-network-cidr=192.168.0.0/16
+
+....
