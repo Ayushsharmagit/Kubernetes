@@ -1,7 +1,7 @@
 # run all the commands in root user
 sudo su
 
-#	update operating system
+# update operating system
 apt-get update
 
 # Docker dependencies
@@ -9,10 +9,10 @@ apt-get install docker.io
 systemctl start docker
 systemctl enable docker
 
-#	‘curl’ command is used to send request URL
+# ‘curl’ command is used to send request URL
 apt-get install curl
 
-#	download an add-key for Kubernetes from URL
+# download an add-key for Kubernetes from URL
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
 
 # add important dependencies for kubernetes
