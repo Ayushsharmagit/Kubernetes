@@ -32,6 +32,5 @@ sudo kubeadm init
 # if the number of available CPUs is less than the required 2        
 sudo kubeadm init --ignore-preflight-errors=NumCPU
 
-kubeadm init --apiserver-advertise-address=<your machine/instance ip-address> --pod-network-cidr=192.168.0.0/16
 
 ....
