@@ -1,0 +1,9 @@
+# initiallizing control plane
+sudo kubeadm init
+        or
+# if the number of available CPUs is less than the required 2        
+sudo kubeadm init --ignore-preflight-errors=NumCPU
+
+sudo mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
